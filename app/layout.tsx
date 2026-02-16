@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next"; // Tambahkan Viewport di sini
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import MusicPlayer from "./components/MusicPlayer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,17 +18,17 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
-// app/layout.tsx
-
 export const metadata: Metadata = {
   title: "Happy Valentine Day for A",
   description: "A special Valentine's gift for A ❤️",
-  // TAMBAHAN PENTING UNTUK HP:
-  viewport: {
-    width: "device-width",
-    initial-scale: 1,
-    maximumScale: 1,
-  },
+};
+
+// PERBAIKAN: Viewport dipisah dan menggunakan camelCase
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  // userScalable: false, // Opsi tambahan: mencegah user melakukan zoom cubit
 };
 
 export default function RootLayout({
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       >
+        <MusicPlayer />
         {children}
       </body>
     </html>
