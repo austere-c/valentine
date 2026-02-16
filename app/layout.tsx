@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next"; // Tambahkan Viewport di sini
+import type { Metadata, Viewport } from "next"; 
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import MusicPlayer from "./components/MusicPlayer";
@@ -23,12 +23,11 @@ export const metadata: Metadata = {
   description: "A special Valentine's gift for A ❤️",
 };
 
-// PERBAIKAN: Viewport dipisah dan menggunakan camelCase
+// PERBAIKAN: Menggunakan initialScale (tanpa strip)
 export const viewport: Viewport = {
   width: "device-width",
-  initialScale: 1,
+  initialScale: 1, 
   maximumScale: 1,
-  // userScalable: false, // Opsi tambahan: mencegah user melakukan zoom cubit
 };
 
 export default function RootLayout({
