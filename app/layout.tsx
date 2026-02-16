@@ -17,9 +17,17 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
+// app/layout.tsx
+
 export const metadata: Metadata = {
   title: "Happy Valentine Day for A",
   description: "A special Valentine's gift for A ❤️",
+  // TAMBAHAN PENTING UNTUK HP:
+  viewport: {
+    width: "device-width",
+    initial-scale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({
